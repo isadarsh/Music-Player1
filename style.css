@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Varela+Round&display=swap');
 
+html {
+    font-size: 80.5%;
+}
+
 body {
     background-color: antiquewhite;
 }
@@ -9,6 +13,7 @@ body {
     padding: 0;
 }
 
+/* adjusting to menu bar */
 nav {
     font-family: "Ubuntu", sans-serif;
     font-weight: 300;
@@ -18,19 +23,19 @@ nav ul {
     display: flex;
     align-items: center;
     list-style-type: none;
-    height: 40px;
+    height: 3rem;
     background-color: rgb(10, 10, 10);
     color: white;
 }
 
 nav ul li {
-    padding: 0 12px;
+    padding: 0 1.2rem;
 }
 
 .brand img {
-    width: 40px;
-    padding-left: 10px;
-    padding-top: 16px;
+    width: 3rem;
+    padding-left: 1rem;
+    padding-top: 1.6rem;
 }
 
 .brand {
@@ -40,48 +45,57 @@ nav ul li {
     font-weight: bolder;
 }
 
+/* adjusting main content container */
 .container {
     min-height: 90vh;
     background-color: black;
     color: white;
     font-family: "Varela Round", sans-serif;
     display: flex;
-    margin: 23px auto;
+    margin: 2.3rem auto;
     width: 80%;
-    border-radius: 12px;
-    padding: 30px;
-    background-image: url(bg.jpg);
-    /* background-position: 75% 35%; */
-    background-size: 100%;
-    margin-top: 1vh;
+    border-radius: 1.3rem;
+    padding: 2rem;
+    background-image: url(bg_new.jpg);
+    background-position: center;
+    background-size: 80rem;
+    margin-top: 1rem;
 }
 
 .songItemContainer {
-    margin-top: 50px;
+    margin-top: 3rem;
+    display: list-item;
+    /* flex-wrap: wrap; */
+    /* justify-content: space-between; */
 }
 
 .songItem {
-    height: 50px;
+    height: 4rem;
     display: flex;
-    padding-bottom: 2px;
-    padding-right: 7px;
+    padding-bottom: 0rem;
+    padding-right: 0.5rem;
     background-color: antiquewhite;
     color: black;
-    margin: 2px 12px;
+    margin: 0.5rem 0.5rem;
     justify-content: space-between;
     align-items: center;
-    border-radius: 14px;
+    border-radius: 1.4rem;
 }
 
 .songItem img {
-    width: 41px;
-    height: 44px;
-    margin: 0px 15px;
-    border-radius: 14px;
+    width: 3rem;
+    height: 3.2rem;
+    margin: 0rem 0.5rem;
+    border-radius: 1.1rem;
 }
 
 .timestamp {
-    margin: 0 25px;
+    margin-right: .5rem;
+}
+
+.songListPlay {
+    display: flex;
+    align-items: center;
 }
 
 .timestamp i {
@@ -91,7 +105,7 @@ nav ul li {
 .bottom {
     display: flex;
     position: sticky;
-    height: 85px;
+    height: 6.5rem;
     background-color: black;
     color: white;
     bottom: 0%;
@@ -102,7 +116,7 @@ nav ul li {
 }
 
 .icons {
-    margin-top: 15px;
+    margin-top: 1.5rem;
 }
 
 .icons i {
@@ -110,18 +124,93 @@ nav ul li {
 }
 
 #myProgressBar {
-    width: 80vw;
+    /* top: 1%; */
+    width: 80%;
     cursor: pointer;
     /* text-align: center; */
 }
 
 .songInfo {
     position: absolute;
-    left: 10vw;
+    left: 11.5%;
 }
 
 .songInfo img {
+    left: 10%;
     opacity: 0;
     transition: opacity 0.5s ease-in;
     font-family: "Varela Round", sans-serif;
+}
+
+
+
+/* //media query from internet  */
+/* Responsive breakpoints */
+@media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+
+    .container {
+        width: 90%;
+    }
+}
+
+@media (max-width: 425px) {
+    html {
+        font-size: 12px;
+    }
+
+    .ul {
+        justify-content: space-evenly;
+    }
+
+    .brand img {
+        padding-top: 0.8rem;
+        /* Adjust top padding for brand logo */
+    }
+
+    .songItem {
+        width: 90%;
+        /* Adjust width of song items */
+    }
+
+    .container {
+        background-size: 20%;
+        margin-left: 2px;
+        margin-right: 2px;
+    }
+
+    .timestamp {
+        display: none;
+        /* Hide timestamp on small screens */
+    }
+
+    .bottom {
+        /* height: auto; */
+        /* Allow bottom bar to adjust height based on content */
+        /* flex-direction: column; */
+        padding-top: 0;
+        /* margin-bottom: 0; */
+    }
+
+    #gif {
+        display: none;
+    }
+
+    .songInfo {
+        /* background-color: red; */
+        /* left: 9%; */
+        top: 35%;
+        max-width: 20%;
+    }
+
+    #masterSongName {
+        padding-top: 2px;
+    }
+
+    .icons {
+        margin-top: 0.5rem;
+        /* Adjust margin */
+    }
 }
