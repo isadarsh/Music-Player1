@@ -185,7 +185,4 @@ document.getElementById("previous").addEventListener("click", () => {
   togglePlayPause(!audioElement.paused);
 });
 
-function myFunction() {
-  var popup = document.getElementById("myPopup");
-  popup.classList.toggle("show");
-}
+
