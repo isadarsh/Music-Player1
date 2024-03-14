@@ -160,32 +160,26 @@ nav ul li {
     html {
         font-size: 12px;
     }
-
     .ul {
         justify-content: space-evenly;
     }
-
     .brand img {
         padding-top: 0.8rem;
         /* Adjust top padding for brand logo */
     }
-
     .songItem {
         width: 90%;
         /* Adjust width of song items */
     }
-
     .container {
         background-size: 20%;
         margin-left: 2px;
         margin-right: 2px;
     }
-
     .timestamp {
         display: none;
         /* Hide timestamp on small screens */
     }
-
     .bottom {
         /* height: auto; */
         /* Allow bottom bar to adjust height based on content */
@@ -193,24 +187,63 @@ nav ul li {
         padding-top: 0;
         /* margin-bottom: 0; */
     }
-
     #gif {
         display: none;
     }
-
     .songInfo {
-        /* background-color: red; */
-        /* left: 9%; */
         top: 35%;
         max-width: 20%;
     }
-
     #masterSongName {
         padding-top: 2px;
     }
-
     .icons {
         margin-top: 0.5rem;
-        /* Adjust margin */
+    }
+}
+
+
+/* Popup container */
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+/* actual popup (appears on top) */
+.popup .popuptext {
+    visibility: hidden;
+    width: 400px;
+    background-color: antiquewhite;
+    color: black;
+    text-align: center;
+    border-radius: 8px;
+    padding: 16px;
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 427%;
+    transform: translateX(-50%);
+}
+/* toggle class */
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+/* Add animation */
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }

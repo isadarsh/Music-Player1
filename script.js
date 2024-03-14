@@ -32,7 +32,7 @@ let songs = [
     coverPath: "covers/3.jpg",
   },
   {
-    songName: "Himesh Wave -The Journey",
+    songName: "Rap God -EMINEM",
     filePath: "songs/4.mp3",
     coverPath: "covers/4.jpg",
   },
@@ -57,10 +57,7 @@ let songs = [
 songItems.forEach((element, i) => {
   element.getElementsByTagName("img")[0].src = songs[i].coverPath;
   element.getElementsByClassName("songName")[0].innerText = songs[i].songName;
-
-}
-
-)
+});
 // Function to play the next song
 function playNextSong() {
   togglePlayPause(false);
@@ -76,11 +73,9 @@ function playNextSong() {
   audioElement.play();
   // Toggle play/pause icon for newsong
   togglePlayPause(true);
-  
 }
 // Event listener for the ended event of the audioElement
-audioElement.addEventListener('ended', playNextSong);
-
+audioElement.addEventListener("ended", playNextSong);
 
 //to synchronize play/pause for masterPlay and songListPlay
 const togglePlayPause = (isPlaying) => {
@@ -103,12 +98,10 @@ const togglePlayPause = (isPlaying) => {
 
 //to handle last song's icon
 const makeAllPlay = () => {
-  listPlay.forEach(
-    (element) => {
-      element.classList.remove("fa-circle-pause");
-      element.classList.add("fa-circle-play");
-    }
-  );
+  listPlay.forEach((element) => {
+    element.classList.remove("fa-circle-pause");
+    element.classList.add("fa-circle-play");
+  });
 };
 
 //updating seekbar progress
@@ -134,36 +127,34 @@ masterPlay.addEventListener("click", () => {
   }
 });
 //play/pause handling for songListPlay
-listPlay.forEach(
-  (element) => {
-    element.addEventListener("click", (e) => {
-      makeAllPlay();
-      index = parseInt(e.target.id);
-      // index = e.target.id;
-      //same song hit
-      if (index === songIndex) {
-        if (audioElement.paused || audioElement.currentTime <= 0) {
-          audioElement.play();
-          togglePlayPause(!audioElement.paused);
-        } else {
-          audioElement.pause();
-          togglePlayPause(!audioElement.paused);
-        }
-      } //new song chosen
-      else {
-        songIndex = index;
-        audioElement.src = `songs/${index}.mp3`;
-        masterSongName.innerText = songs[index].songName;
+listPlay.forEach((element) => {
+  element.addEventListener("click", (e) => {
+    makeAllPlay();
+    index = parseInt(e.target.id);
+    // index = e.target.id;
+    //same song hit
+    if (index === songIndex) {
+      if (audioElement.paused || audioElement.currentTime <= 0) {
         audioElement.play();
         togglePlayPause(!audioElement.paused);
+      } else {
+        audioElement.pause();
+        togglePlayPause(!audioElement.paused);
       }
-      // audioElement.currentTime = 0;
-    });
-  }
-);
-//handling next>> 
+    } //new song chosen
+    else {
+      songIndex = index;
+      audioElement.src = `songs/${index}.mp3`;
+      masterSongName.innerText = songs[index].songName;
+      audioElement.play();
+      togglePlayPause(!audioElement.paused);
+    }
+    // audioElement.currentTime = 0;
+  });
+});
+//handling next>>
 document.getElementById("next").addEventListener("click", (element) => {
-  if (songIndex >= songs.length-1) {
+  if (songIndex >= songs.length - 1) {
     songIndex = 0;
   } else {
     songIndex += 1;
@@ -180,7 +171,7 @@ document.getElementById("next").addEventListener("click", (element) => {
 // handling previous<<
 document.getElementById("previous").addEventListener("click", () => {
   if (songIndex <= 0) {
-    songIndex = songs.length-1;
+    songIndex = songs.length - 1;
   } else {
     songIndex -= 1;
   }
@@ -193,3 +184,8 @@ document.getElementById("previous").addEventListener("click", () => {
   audioElement.play();
   togglePlayPause(!audioElement.paused);
 });
+
+function myFunction() {
+  var popup = document.getElementById("myPopup");
+  popup.classList.toggle("show");
+}
